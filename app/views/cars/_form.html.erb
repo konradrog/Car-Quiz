@@ -1,0 +1,29 @@
+<%= form_for @car do |f| %>
+  <p>
+    <%= f.label "Car brand" %>
+    <%= f.text_field :brand %>
+  </p>
+
+  <p>
+    <%= f.label "Model" %>
+    <%= f.text_field :model %>
+  </p>
+
+  <p>
+    <%= f.label "Year" %>
+    <%= f.text_field :year %>
+  </p>
+
+  <p>
+    <%= f.label "Body style" %>
+    <%= f.text_field :body_style %>
+  </p>
+
+  <p>
+    <%= f.label "Segment" %>
+    <%= f.text_field :segment%>
+  </p>
+  <p>
+      <%= f.submit "Add car", class: "btn" %>
+  </p>
+<% end %>

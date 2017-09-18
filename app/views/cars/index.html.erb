@@ -1,0 +1,12 @@
+<h1> list of all cars </h1>
+
+<% @cars.each do |car| %>
+  <p>
+    <%= car.brand %>
+    <%= car.model %>
+  <%= link_to "show more", car_path(car) %>
+</p>
+<% end %>
+
+<%= link_to "Add new car", new_car_path %>
+<%= link_to "Back to Main Page", games_path %>

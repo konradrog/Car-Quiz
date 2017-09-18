@@ -1,0 +1,25 @@
+<%= link_to "back to all cars", cars_path %>
+
+<p> <strong>Car Brand</strong>
+  <%= @car.brand %>
+</p>
+
+<p> <strong>Model</strong>
+  <%= @car.model %>
+</p>
+
+<p> <strong>year</strong>
+  <%= @car.year %>
+</p>
+
+<p> <strong>Body style</strong>
+  <%= @car.body_style %>
+</p>
+
+<p> <strong>segment</strong>
+  <%= @car.segment %>
+</p>
+
+<%= link_to "Add new car", new_car_path %>
+<%= link_to "edit car", edit_car_path(@car) %>
+<%= link_to "delete car", car_path(@car), method: :delete, data: { confirm: " Are you sure?"}%>
