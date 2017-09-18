@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170918082156) do
+ActiveRecord::Schema.define(version: 20170918082824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.bigint "question_id"
+    t.bigint "car_id"
+    t.boolean "correct", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["car_id"], name: "index_answers_on_car_id"
+    t.index ["question_id"], name: "index_answers_on_question_id"
+  end
 
   create_table "cars", force: :cascade do |t|
     t.string "brand"
@@ -38,5 +48,7 @@ ActiveRecord::Schema.define(version: 20170918082156) do
     t.index ["game_id"], name: "index_questions_on_game_id"
   end
 
+  add_foreign_key "answers", "cars"
+  add_foreign_key "answers", "questions"
   add_foreign_key "questions", "games"
 end
