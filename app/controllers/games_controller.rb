@@ -12,9 +12,17 @@ class GamesController < ApplicationController
     if @game.new_record?
       render "new"
     else
+      Game.create_questions(@game.id)
       redirect_to @game
     end
   end
+
+  def show
+    @game = Game.find(params[:id])
+    @questions = @game.questions
+  end
+
+
 
   private
 

@@ -1,1 +1,12 @@
 <h1> Game </h1>
+
+
+<% @questions.each_with_index do |q, i| %>
+  <p> Questions nr  <%= i %>
+    <p>
+    <% q.answers.each do |a| %>
+      <%= a.car_id %>
+    <% end %>
+    <p>
+  </p>
+<% end %>
