@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :cars
 
+  post "games/:id", to: "games#check_answers"
 
   root "games#index"
 end
