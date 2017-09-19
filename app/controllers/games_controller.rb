@@ -41,6 +41,7 @@ class GamesController < ApplicationController
     unless bad == 0
       redirect_to game_path(@game, params[:answers].permit!)
     else
+      flash[:notice] = "Congratulations! You guess all the cars, what's next ?"
       redirect_to games_path
     end
   end
