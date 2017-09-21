@@ -1,0 +1,19 @@
+<%= form_tag do %>
+  <% @game.questions.each_with_index do |question, i| %>
+    <h2> Question <%= i + 1 %> </h2>
+      <div>
+        <%= image_tag question.correct_answer.car.image.url, width: 252%>
+      </div>
+    <% question.answers.each do |answer| %>
+      <div>
+        <%= radio_button_tag("answers[#{question.id}]", answer.id, answer.checked) %>
+        <%= label("answer", answer.car.brand + " " + answer.car.model) %>
+      </div>
+    <% end %>
+
+  <% end %>
+  <p>
+    <%= submit_tag("Result") %>
+  </p>
+<% end %>
+<p id="notice_#{question.id}"><strong><%= notice %></strong></p>
