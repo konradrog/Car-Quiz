@@ -2,6 +2,7 @@
 
 <% @cars.each do |car| %>
   <p>
+    <%= image_tag car.image.url, width: 252%>
     <%= car.brand %>
     <%= car.model %>
   <%= link_to "show more", car_path(car) %>

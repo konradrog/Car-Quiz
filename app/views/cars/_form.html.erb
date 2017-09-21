@@ -23,6 +23,11 @@
     <%= f.label "Segment" %>
     <%= f.text_field :segment%>
   </p>
+
+  <div class="field">
+    add an image....
+    <%= f.file_field :image %>
+  </div>
   <p>
       <%= f.submit "Add car", class: "btn" %>
   </p>

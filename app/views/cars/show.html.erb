@@ -20,6 +20,8 @@
   <%= @car.segment %>
 </p>
 
+<%= image_tag @car.image.url, width: 400 %>
+
 <%= link_to "Add new car", new_car_path %>
 <%= link_to "edit car", edit_car_path(@car) %>
 <%= link_to "delete car", car_path(@car), method: :delete, data: { confirm: " Are you sure?"}%>
