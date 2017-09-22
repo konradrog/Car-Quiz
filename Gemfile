@@ -22,6 +22,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'carrierwave-postgresql'
 gem 'postgresql_lo_streamer'
 gem "mini_magick"
+gem 'will_paginate'
 
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS

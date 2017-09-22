@@ -3,7 +3,6 @@
   <%= link_to "Add new car", new_car_path %>
   <%= link_to "Back to Main Page", games_path %>
 </div>
-
 <% @cars.each do |car| %>
   <div class="col-sm-4 center_of_application" >
 
@@ -18,3 +17,4 @@
     </div>
   </div>
 <% end %>
+<%= will_paginate @cars %>
