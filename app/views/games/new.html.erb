@@ -1,13 +1,17 @@
-<h1> Choose your level </h1>
-
-<%= form_for @game do |f| %>
-  <%= f.radio_button :level , "1" %>
-  <%= f.label "1" %>
-  <%= f.radio_button :level , "2" %>
-  <%= f.label "2" %>
-  <%= f.radio_button :level , "3" %>
-  <%= f.label "3" %>
-  <%= f.submit %>
-<% end %>
-
-<%= link_to "back to main page", games_path%>
+<div class="wrapper">
+  <div>
+    <h1> Choose your level </h1>
+  </div>
+  <div>
+    <%= form_for @game do |f| %>
+      <%= f.radio_button :level , "1" %>
+      <%= f.label "1" %>
+      <%= f.radio_button :level , "2" %>
+      <%= f.label "2" %>
+      <%= f.radio_button :level , "3" %>
+      <%= f.label "3" %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+  <%= link_to "back to main page", games_path%>
+</div>
