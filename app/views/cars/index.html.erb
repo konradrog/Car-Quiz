@@ -1,13 +1,20 @@
-<h1> list of all cars </h1>
+<div>
+  <h1> list of all cars </h1>
+  <%= link_to "Add new car", new_car_path %>
+  <%= link_to "Back to Main Page", games_path %>
+</div>
 
 <% @cars.each do |car| %>
-  <p>
-    <%= image_tag car.image.url, width: 252%>
-    <%= car.brand %>
-    <%= car.model %>
-  <%= link_to "show more", car_path(car) %>
-</p>
-<% end %>
+  <div class="col-sm-4 center_of_application" >
 
-<%= link_to "Add new car", new_car_path %>
-<%= link_to "Back to Main Page", games_path %>
+    <div class="card">
+      <%= link_to image_tag(car.image.url), car_path(car) %>
+      <h1 class="text">
+        <%= car.brand %>
+        <%= car.model %>
+
+      </h1>
+      <h2 class="animate-text"> <%= car.year %> </h2>
+    </div>
+  </div>
+<% end %>
