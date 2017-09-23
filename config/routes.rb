@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
+  root to: "games#index"
   resources :games do
     resources :question
   end
@@ -10,5 +11,5 @@ Rails.application.routes.draw do
 
   post "games/:id", to: "games#check_answers"
 
-  root "games#index"
+
 end
