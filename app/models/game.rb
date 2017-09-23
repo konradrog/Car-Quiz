@@ -1,5 +1,6 @@
 class Game < ApplicationRecord
   has_many :questions
+  belongs_to :user
 
   def self.create_questions(game_id)
     game = Game.find(game_id)
