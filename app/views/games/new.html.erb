@@ -1,6 +1,9 @@
+<div class='wrapper_title_small'>
   <div>
-    <h1> Choose your level </h1>
+    <h2>Choose your level</h2>
   </div>
+</div>
+<div class='wrapper'>
   <div>
     <%= form_for @game do |f| %>
       <%= f.radio_button :level , "1" %>
@@ -9,7 +12,13 @@
       <%= f.label "2" %>
       <%= f.radio_button :level , "3" %>
       <%= f.label "3" %>
-      <%= f.submit %>
+      <div>
+        <%= f.submit "Create Game", class: "btn-primary" %>
+      </div>
     <% end %>
   </div>
+
+</div>
+<div>
   <%= link_to "back to main page", games_path%>
+</div>

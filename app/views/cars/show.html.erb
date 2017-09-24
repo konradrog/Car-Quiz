@@ -1,27 +1,37 @@
 <%= link_to "back to all cars", cars_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-5" >
+      <p>
+        <%= image_tag @car.image.url, width: 400, class: "car_image" %>
+      </p>
+    </div>
+    <div class="col-sm-3" >
+      <p> <strong>Car Brand: </strong>
+        <%= @car.brand %>
+      </p>
 
-<p> <strong>Car Brand</strong>
-  <%= @car.brand %>
-</p>
+      <p> <strong>Model: </strong>
+        <%= @car.model %>
+      </p>
 
-<p> <strong>Model</strong>
-  <%= @car.model %>
-</p>
+      <p> <strong>Year: </strong>
+        <%= @car.year %>
+      </p>
 
-<p> <strong>year</strong>
-  <%= @car.year %>
-</p>
+      <p> <strong>Body style: </strong>
+        <%= @car.body_style %>
+      </p>
 
-<p> <strong>Body style</strong>
-  <%= @car.body_style %>
-</p>
+      <p> <strong>Segment: </strong>
+        <%= @car.segment %>
+      </p>
+    </div>
 
-<p> <strong>segment</strong>
-  <%= @car.segment %>
-</p>
-
-<%= image_tag @car.image.url, width: 400 %>
-
-<%= link_to "Add new car", new_car_path %>
-<%= link_to "edit car", edit_car_path(@car) %>
-<%= link_to "delete car", car_path(@car), method: :delete, data: { confirm: " Are you sure?"}%>
+    <div>
+      <%= link_to "Add new car", new_car_path %>
+      <%= link_to "edit car", edit_car_path(@car) %>
+      <%= link_to "delete car", car_path(@car), method: :delete, data: { confirm: " Are you sure?"}%>
+    </div>
+  </div>
+</div>

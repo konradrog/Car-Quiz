@@ -15,9 +15,11 @@
     </div>
   <% end %>
   <p>
-    <%= submit_tag("Result") %>
+    <%= submit_tag "Result", class: "btn-primary" %>
   </p>
 
 <% end %>
-
+<div>
+  <%= link_to "back to main page", games_path %>
+</div>
 <p id="notice_#{question.id}"><strong><%= notice %></strong></p>
