@@ -1,4 +1,6 @@
 class GamesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
   end
 
@@ -7,7 +9,7 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = Game.create(game_params)
+    @game = current_user.games.create(game_params)
 
     if @game.new_record?
       render "new"

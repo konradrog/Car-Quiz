@@ -1,4 +1,6 @@
 class CarsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @cars = Car.all.order(:brand).paginate(page: params[:page], per_page: 6)
   end
