@@ -1,19 +1,19 @@
 <div id="wrapper_list_of_cars">
   <h1> List of all cars </h1>
   <%= link_to "Add new car", new_car_path %>
-  <%= link_to "Back to Main Page", games_path %>
 </div>
 <% @cars.each do |car| %>
-  <div class="col-sm-4 center_of_application" >
+  <div class="col-sm-4" >
 
-    <div class="card">
-      <%= link_to image_tag(car.image.url), car_path(car) %>
-      <h1 class="text">
-        <%= car.brand %>
-        <%= car.model %>
-
-      </h1>
-      <h2 class="animate-text"> <%= car.year %> </h2>
+    <div class="card" style="width: 26rem;">
+      <%= link_to image_tag(car.image.url, width: 260), car_path(car) %>
+      <div class="card-block">
+        <h4 class="card-title">
+          <%= car.brand %>
+          <%= car.model %>
+        </h4>
+        <p class="card-text"><%= car.year %></p>
+      </div>
     </div>
   </div>
 <% end %>

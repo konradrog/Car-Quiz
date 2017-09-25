@@ -1,7 +1,46 @@
-<div class="wrapper">
+<!-- <div class="wrapper">
   <div>
     <%= link_to "New game", new_game_path, class: "btn btn-primary" %>
     <%= link_to "See All Cars", cars_path, class: "btn btn-primary" %>
     <div class="notice_main_page"> <%= notice %></div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-5" >
+      <div class="card" id="top_left" style="width: 30rem">
+        <%= link_to image_tag(@car1.image.url, width: 300), new_game_path, class: "card-img-top  hoverable" %>
+        <div class="card-block">
+          <h4 class="card-title">
+            <%= link_to image_tag("play_btn.png"), new_game_path %>
+            <span class="title_near_icon">
+              <%= link_to "New Game", new_game_path %>
+            </span>
+          </h4>
+          <p class="card-text"></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-5" >
+      <div class="card" style="width: 30rem;">
+        <%= link_to image_tag(@car2.image.url, width: 300), cars_path, class: "card-img-top" %>
+          <div class="card-block">
+            <h4 class="card-title">
+              <%= link_to image_tag("list_btn.png"), cars_path %>
+              <span class="title_near_icon">
+                <%= link_to "All cars", cars_path %>
+              </span>
+            </h4>
+            <p class="card-text"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="row">
+    <div class="col-sm-5" >
+
+    </div>
   </div>
 </div>

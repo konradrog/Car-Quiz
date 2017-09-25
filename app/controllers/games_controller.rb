@@ -2,6 +2,10 @@ class GamesController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    cars = Car.order("Random()").limit(3).to_a
+    @car1 = cars[0]
+    @car2 = cars[1]
+    @car3 = cars[2]
   end
 
   def new
