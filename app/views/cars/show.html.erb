@@ -1,3 +1,9 @@
+<% if current_user.admin? %>
+  <%= link_to image_tag("add_btn.png"), new_car_path, id: "hamburger_new_car" %>
+  <%= link_to image_tag("update_btn.png"), new_car_path, id: "hamburger_update_car" %>
+  <%= link_to image_tag("delete_btn.png"), car_path(@car), method: :delete, data: { confirm: " Are you sure?"}, id: "hamburger_delete_car" %>
+<% end %>
+
 <%= link_to "back to all cars", cars_path %>
 <div class="container">
   <div class="row">
@@ -26,12 +32,6 @@
       <p> <strong>Segment: </strong>
         <%= @car.segment %>
       </p>
-    </div>
-
-    <div>
-      <%= link_to "Add new car", new_car_path %>
-      <%= link_to "edit car", edit_car_path(@car) %>
-      <%= link_to "delete car", car_path(@car), method: :delete, data: { confirm: " Are you sure?"}%>
     </div>
   </div>
 </div>

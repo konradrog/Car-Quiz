@@ -1,6 +1,9 @@
+<% if current_user.admin? %>
+  <%= link_to image_tag("add_btn.png"), new_car_path, id: "hamburger_new_car" %>
+<% end %>
+
 <div id="wrapper_list_of_cars">
   <h1> List of all cars </h1>
-  <%= link_to "Add new car", new_car_path %>
 </div>
 <% @cars.each do |car| %>
   <div class="col-sm-4" >
