@@ -14,11 +14,13 @@ Rails.application.routes.draw do
   resources :games do
     resources :question
   end
-
   resources :cars
+
   mount PostgresqlLoStreamer::Engine => "/car_image"
 
   post "games/:id", to: "games#check_answers"
+  #get "users/:id" => "users#show"
+  resources :users
 
 
 end
