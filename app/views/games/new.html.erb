@@ -6,12 +6,18 @@
 <div class='wrapper'>
   <div>
     <%= form_for @game do |f| %>
-      <%= f.radio_button :level , "1" %>
-      <%= f.label "1" %>
-      <%= f.radio_button :level , "2" %>
-      <%= f.label "2" %>
-      <%= f.radio_button :level , "3" %>
-      <%= f.label "3" %>
+      <label class="level_button">
+        <%= f.radio_button :level , "1" %>
+        <%= f.label "1" %>
+      </label>
+      <label class="level_button">
+        <%= f.radio_button :level , "2" %>
+        <%= f.label "2" %>
+      </label>
+      <label class="level_button">
+        <%= f.radio_button :level , "3" %>
+        <%= f.label "3" %>
+      </label>
       <div>
         <%= f.submit "Create Game", class: "btn-primary" %>
       </div>
