@@ -341,3 +341,27 @@ a:active {
 .answer_button:hover {
     background:#ccc;
 }
+
+.cover_answer_lvl_2 {
+  width: 260;
+  height: 180;
+  margin-left: 50px;
+  margin-top: 40px;
+  position: absolute;
+  background-color: black;
+  border: 40px solid #BDBDBD;
+  border-radius: 10px;
+  opacity: 0.99;
+}
+
+.cover_answer_lvl_3 {
+  width: 260;
+  height: 180;
+  margin-left: 60px;
+  margin-top: 55px;
+  position: absolute;
+  background-color: black;
+  border: 65px solid #BDBDBD;
+  border-radius: 10px;
+  opacity: 0.99;
+}

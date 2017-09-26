@@ -4,15 +4,20 @@
     <div class="col-sm-4" >
       <div class="card answers" style="width: 26rem">
         <!-- <h1 class="text"> Question <%= i + 1 %> </h1> -->
-          <%= image_tag question.correct_answer.car.image.url, width: 260%>
-          <% question.answers.each do |answer| %>
-            <div class="card-text">
-              <label class="answer_button">
-                <%= radio_button_tag("answers[#{question.id}]", answer.id, answer.checked, class: "answer_text") %>
-                <%= label("answer", answer.car.brand + " " + answer.car.model, class: "answer_text") %>
-              </label>
-            </div>
-          <% end %>
+        <% if @game.level == 2 %>
+          <div class="cover_answer_lvl_2"></div>
+        <% elsif @game.level == 3 %>
+            <div class="cover_answer_lvl_3"></div>
+        <% end %>
+        <%= image_tag question.correct_answer.car.image.url, width: 260%>
+        <% question.answers.each do |answer| %>
+          <div class="card-text">
+            <label class="answer_button">
+              <%= radio_button_tag("answers[#{question.id}]", answer.id, answer.checked, class: "answer_text") %>
+              <%= label("answer", answer.car.brand + " " + answer.car.model, class: "answer_text") %>
+            </label>
+          </div>
+        <% end %>
       </div>
     </div>
   <% end %>
