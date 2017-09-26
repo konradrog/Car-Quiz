@@ -16,6 +16,7 @@ class GamesController < ApplicationController
     @game = current_user.games.create(game_params)
 
     if @game.new_record?
+      flash[:notice] = "Choose level ;)"
       render "new"
     else
       Game.create_questions(@game.id)
