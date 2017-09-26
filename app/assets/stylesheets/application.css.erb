@@ -31,8 +31,9 @@
 
 
 html {
-    background-image: linear-gradient(45deg, #448AFF, #4F364C);
-    /*background-image: url('main_background2.png');*/
+    /*background-image: linear-gradient(45deg, #448AFF, #4F364C);*/
+
+    background-image: url(<%= asset_path 'main_background2.png'%>);
     font-family:'Roboto';
 }
 body {
@@ -382,7 +383,7 @@ a:active {
   background-color: black;
   border: 35px solid #BDBDBD;
   border-radius: 10px;
-  opacity: 0.90;
+  opacity: 0.80;
 }
 
 .cover_answer_lvl_3 {
