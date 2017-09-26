@@ -31,31 +31,37 @@ class GamesController < ApplicationController
   def check_answers
     good = 0
     bad = 0
+    not_checked = 0
     wrong_answer = []
     @game = Game.find(params[:id])
-    @game.questions.each_with_index do |question, i|
-
-      answer = question.answers.to_a.find { |a| a.id == params[:answers]["#{question.id}"].to_i}
-      answer.checked = true
-      if answer.correct == true
-
-        good += 1
-      else
-        bad += 1
-        wrong_answer << i + 1
-      end
-
-    end
-    flash[:notice] = "good answers : #{good}, bad answers #{bad} for questions #{wrong_answer}"
-    unless bad == 0
-      # redirect_to game_path(@game, params[:answers].permit!)
-
+    if params[:answers].nil?
+      flash[:notice] = "Choose your answers for all questions"
       render "show"
     else
-      @game.finished = true
-      @game.save
-      flash[:notice] = "Congratulations! You guess all the cars, what's next ?"
-      redirect_to games_path
+      @game.questions.each_with_index do |question, i|
+
+        answer = question.answers.to_a.find { |a| a.id == params[:answers]["#{question.id}"].to_i}
+        if !answer.nil?
+          answer.checked = true
+          if answer.correct == true
+            good += 1
+          else
+            bad += 1
+            wrong_answer << i + 1
+          end
+        else
+          not_checked += 1
+        end
+      end
+      flash[:notice] = "good answers : #{good}, bad answers: for questions #{wrong_answer}, not checked: #{not_checked}"
+      unless bad == 0
+        render "show"
+      else
+        @game.finished = true
+        @game.save
+        flash[:notice] = "Congratulations! You guess all the cars, what's next ?"
+        redirect_to games_path
+      end
     end
   end
 
