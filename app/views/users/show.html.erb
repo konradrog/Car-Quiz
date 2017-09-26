@@ -1,1 +1,12 @@
-<%= @user.email %>
+<h1> Hello <%= @user.email %> </h1>
+
+<h2> Your last games </h2>
+<div>
+  <% @games.each do |game|%>
+    <p>
+      <%= game.id %>
+      <%= game.level %>
+      <%= game.created_at %>
+    </p>
+  <% end %>
+</div>
