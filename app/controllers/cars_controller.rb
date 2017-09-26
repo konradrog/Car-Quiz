@@ -2,7 +2,11 @@ class CarsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @cars = Car.all.order(:brand).paginate(page: params[:page], per_page: 6)
+    if params[:order] == "highest_first" || nil
+      @cars = Car.all.order(brand: :desc).paginate(page: params[:page], per_page: 6)
+    else
+      @cars = Car.all.order(:brand).paginate(page: params[:page], per_page: 6)
+    end
   end
 
   def new
