@@ -388,3 +388,18 @@ a:active {
   font-size: 30px;
   color: white;
 }
+
+.user_games {
+  margin: 10px;
+  padding: 4px;
+}
+.user_games th {
+  color: white;
+  padding: 4px;
+}
+
+.user_games td {
+  color: white;
+  padding: 6px;
+  margin-left: 10px;
+}

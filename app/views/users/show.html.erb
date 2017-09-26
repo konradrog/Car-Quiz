@@ -1,14 +1,25 @@
 <h1> Hello <%= @user.email %> </h1>
 
 <h2> Your last games </h2>
-<div>
+
+<table class="user_games">
+  <tr>
+    <th>Start at </th>
+    <th>Level </th>
+    <th>Finished </th>
+  </tr>
   <% @games.each do |game|%>
-    <p>
-      <%= game.id %>
-      <%= game.level %>
-      <%= game.created_at %>
-      <%= game.finished %>
-      <%= link_to "Show game", game_path(game) %>
-    </p>
+    <tr>
+      <td><%= game.created_at.strftime("%m-%d-%Y  %H:%M ") %></td>
+      <td><%= game.level %></td>
+      <td>
+        <% if game.finished %>
+          Yes
+        <% else %>
+          No
+        <% end %>
+      </td>
+      <td><%= link_to "Show game", game_path(game) %></td>
+    </tr>
   <% end %>
-</div>
+</table>
