@@ -363,11 +363,11 @@ a:active {
 .cover_answer_lvl_2 {
   width: 260;
   height: 180;
-  margin-left: 50px;
-  margin-top: 40px;
+  margin-left: 60px;
+  margin-top: 50px;
   position: absolute;
   background-color: black;
-  border: 40px solid #BDBDBD;
+  border: 45px solid #BDBDBD;
   border-radius: 10px;
   opacity: 0.99;
 }
@@ -382,4 +382,9 @@ a:active {
   border: 65px solid #BDBDBD;
   border-radius: 10px;
   opacity: 0.99;
+}
+
+.notice {
+  font-size: 30px;
+  color: white;
 }
