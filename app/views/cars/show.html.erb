@@ -1,6 +1,6 @@
 <% if current_user.admin? %>
   <%= link_to image_tag("add_btn.png"), new_car_path, id: "hamburger_new_car" %>
-  <%= link_to image_tag("update_btn.png"), new_car_path, id: "hamburger_update_car" %>
+  <%= link_to image_tag("update_btn.png"), edit_car_path, id: "hamburger_update_car" %>
   <%= link_to image_tag("delete_btn.png"), car_path(@car), method: :delete, data: { confirm: " Are you sure?"}, id: "hamburger_delete_car" %>
 <% end %>
 
