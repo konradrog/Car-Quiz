@@ -364,13 +364,25 @@ a:active {
 .cover_answer_lvl_2 {
   width: 260;
   height: 180;
-  margin-left: 60px;
-  margin-top: 50px;
+  margin-left: 40px;
+  margin-top: 40px;
   position: absolute;
   background-color: black;
-  border: 45px solid #BDBDBD;
+  border: 40px solid #BDBDBD;
   border-radius: 10px;
-  opacity: 0.99;
+  opacity: 0.80;
+}
+
+.cover_answer_lvl_2_1 {
+  width: 260;
+  height: 180;
+  margin-left: 80px;
+  margin-top: 80px;
+  position: absolute;
+  background-color: black;
+  border: 35px solid #BDBDBD;
+  border-radius: 10px;
+  opacity: 0.90;
 }
 
 .cover_answer_lvl_3 {
@@ -382,7 +394,31 @@ a:active {
   background-color: black;
   border: 65px solid #BDBDBD;
   border-radius: 10px;
-  opacity: 0.99;
+  opacity: 0.75;
+}
+
+.cover_answer_lvl_3_1 {
+  width: 260;
+  height: 180;
+  margin-left: 120px;
+  margin-top: 90px;
+  position: absolute;
+  background-color: black;
+  border: 45px solid #BDBDBD;
+  border-radius: 10px;
+  opacity: 0.70;
+}
+
+.cover_answer_lvl_3_2 {
+  width: 260;
+  height: 180;
+  margin-left: 20px;
+  margin-top: 20px;
+  position: absolute;
+  background-color: black;
+  border: 45px solid #BDBDBD;
+  border-radius: 10px;
+  opacity: 0.70;
 }
 
 .notice {

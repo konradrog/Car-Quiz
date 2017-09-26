@@ -6,8 +6,11 @@
         <!-- <h1 class="text"> Question <%= i + 1 %> </h1> -->
         <% if @game.level == 2 %>
           <div class="cover_answer_lvl_2"></div>
+          <div class="cover_answer_lvl_2_1"></div>
         <% elsif @game.level == 3 %>
-            <div class="cover_answer_lvl_3"></div>
+          <div class="cover_answer_lvl_3"></div>
+          <div class="cover_answer_lvl_3_1"></div>
+          <div class="cover_answer_lvl_3_2"></div>
         <% end %>
         <%= image_tag question.correct_answer.car.image.url, width: 260%>
         <% question.answers.each do |answer| %>
