@@ -1,8 +1,7 @@
 <h1> Hello <%= @user.email %> </h1>
 
 <h2> Your last games </h2>
-<div class="game_procent"> <%= "#{@finished.round(2)}" %> % games finished </div>
-
+<div class="game_procent"> <%= "#{format('%.2f', @finished)}" %> % games finished </div>
 <table class="user_games">
   <tr>
     <th>Start at </th>

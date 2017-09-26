@@ -4,6 +4,10 @@ class UsersController < ApplicationController
     @games = @user.games.order(id: :desc).paginate(page: params[:page], per_page: 10)
     finish = @user.games.where(finished: :true).count
     not_finish = @user.games.where(finished: :false).count
-    @finished = ( finish.to_f / not_finish ) * 100
+    if not_finish != 0
+      @finished = ( not_finish / finish.to_f ) * 100
+    else
+      @finished = 100
+    end
   end
 end
