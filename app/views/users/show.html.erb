@@ -7,6 +7,8 @@
       <%= game.id %>
       <%= game.level %>
       <%= game.created_at %>
+      <%= game.finished %>
+      <%= link_to "Show game", game_path(game) %>
     </p>
   <% end %>
 </div>
