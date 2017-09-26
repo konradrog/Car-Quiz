@@ -35,7 +35,7 @@ class GamesController < ApplicationController
     wrong_answer = []
     @game = Game.find(params[:id])
     if params[:answers].nil?
-      flash[:notice] = "Choose your answers for all questions"
+      flash[:notice] = "Choose answers for all questions"
       render "show"
     else
       @game.questions.each_with_index do |question, i|
@@ -54,7 +54,7 @@ class GamesController < ApplicationController
         end
       end
       flash[:notice] = "good answers : #{good}, bad answers: for questions #{wrong_answer}, not checked: #{not_checked}"
-      unless bad == 0
+      if bad > 0 || not_checked > 0
         render "show"
       else
         @game.finished = true
