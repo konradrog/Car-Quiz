@@ -5,9 +5,18 @@
 <div class="game_procent"> <%= "#{format('%.2f', @finished)}" %> % games finished </div>
 <table class="user_games">
   <tr>
-    <th>Start at </th>
-    <th>Level </th>
-    <th>Finished </th>
+    <th>Start at
+      <%= link_to image_tag("down_arrow_btn.png"), current_user, title: "Newest game first" %>
+      <%= link_to image_tag("up_arrow_btn.png"), params.permit!.merge(order: "older_first") ,title: "Oldest game first" %>
+    </th>
+    <th>Level
+      <%= link_to image_tag("down_arrow_btn.png"), params.permit!.merge(order: "lower_level_first"), title: "Lowest level first" %>
+      <%= link_to image_tag("up_arrow_btn.png"), params.permit!.merge(order: "higher_level_first"), title: "Highest level first" %>
+    </th>
+    <th>Finished
+      <%= link_to image_tag("checked_btn.png"), params.permit!.merge(order: "finished_first"), title: "Finished games first" %>
+      <%= link_to image_tag("unchecked_btn.png"), params.permit!.merge(order: "unfinished_first"), title: "Unfinished games first"%>
+    </th>
   </tr>
   <% @games.each do |game|%>
     <tr>
