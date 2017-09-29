@@ -23,4 +23,18 @@ class Game < ApplicationRecord
       answers.each { |answer| answer.save! }
     end
   end
+
+  def self.create_game(user, level)
+    game = user.games.new
+    game.level = level
+    byebug
+    case level
+    when 2
+      game.score += 15
+    when
+      game.score += 30
+    end
+    game.save
+    game
+  end
 end

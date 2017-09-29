@@ -13,8 +13,7 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = current_user.games.create(game_params)
-
+    @game = Game.create_game(current_user, game_params[:level])
     if @game.new_record?
       flash[:notice] = "Choose level ;)"
       render "new"
@@ -54,6 +53,8 @@ class GamesController < ApplicationController
         end
       end
       flash[:notice] = "good answers : #{good}, bad answers: for questions #{wrong_answer}, not checked: #{not_checked}"
+      @game.score -= (5 * bad)
+      @game.save
       if bad > 0 || not_checked > 0
         render "show"
       else

@@ -2,7 +2,7 @@
 <%= link_to "Logout", destroy_user_session_path, method: :delete %>
 
 <h2 class="user_title"> Your last games </h2>
-<div class="game_procent"> <%= "#{format('%.2f', @finished)}" %> % games finished </div>
+<div class="game_procent"> <%= "#{format('%.2f', @finished)}" %> % games finished. Total score: <%= "#{@total_score}" %></div>
 <table class="user_games">
   <tr>
     <th>Start at
@@ -17,6 +17,8 @@
       <%= link_to image_tag("checked_btn.png"), params.permit!.merge(order: "finished_first"), title: "Finished games first" %>
       <%= link_to image_tag("unchecked_btn.png"), params.permit!.merge(order: "unfinished_first"), title: "Unfinished games first"%>
     </th>
+    <th> Score
+    </th>
   </tr>
   <% @games.each do |game|%>
     <tr>
@@ -29,6 +31,7 @@
           No
         <% end %>
       </td>
+      <td><%= game.score %>
       <td><%= link_to "Show game", game_path(game) %></td>
     </tr>
   <% end %>
