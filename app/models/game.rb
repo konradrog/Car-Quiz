@@ -30,7 +30,7 @@ class Game < ApplicationRecord
     case level
     when 2
       game.score += 15
-    when
+    when 3
       game.score += 30
     end
     game.save
