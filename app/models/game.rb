@@ -27,7 +27,6 @@ class Game < ApplicationRecord
   def self.create_game(user, level)
     game = user.games.new
     game.level = level
-    byebug
     case level
     when 2
       game.score += 15
