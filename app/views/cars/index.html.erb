@@ -5,10 +5,14 @@
 <div id="wrapper_list_of_cars">
   <h1> List of all cars </h1>
 </div>
+
+
 <div>
-  <%= link_to "Brand: A-Z |", cars_path %> |
-  <%= link_to "| Z-A", params.permit!.merge(order: "highest_first") %>
+  <%= link_to "Brand: A-Z ", cars_path %> |
+  <%= link_to " Z-A", params.permit!.merge(order: "highest_first") %>
 </div>
+
+
 <% @cars.each do |car| %>
   <div class="col-sm-4" >
 
