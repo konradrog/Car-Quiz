@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def index
-     @users = User.best_players
+    @users = User.best_players
+    @scores = User.best_scores
   end
 
   def show

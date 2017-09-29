@@ -1,4 +1,17 @@
 <h1> Best players </h1>
-<% @users.each do |user|  %>
-  <%= user %>
-<% end %>
+<table style="color: white;">
+  <tr>
+    <th> Name </th>
+    <th> Score </th>
+  </tr>
+  <% @users.each_with_index do |user, i|  %>
+    <tr>
+      <td>
+        <%= user.email[0..5] %>...
+      </td>
+      <td>
+        <%= @scores[i][1]%>
+      </td>
+    </tr>
+  <% end %>
+</table>
