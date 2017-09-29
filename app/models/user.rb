@@ -5,4 +5,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+
+  def self.best_players
+    User.joins(:games).group("users.id").sum(:score).sort
+  end
+
 end

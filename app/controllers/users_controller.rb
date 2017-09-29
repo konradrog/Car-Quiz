@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def index
+     @users = User.best_players
+  end
+
   def show
     @user = User.find(params[:id])
     @games = @user.games
