@@ -5,7 +5,6 @@ class UsersController < ApplicationController
     total_score
     choose_order(params)
     finished_games
-
   end
 
   def finished_games
@@ -18,7 +17,6 @@ class UsersController < ApplicationController
     @games.each do |e|
       @total_score += e.score
     end
-
   end
 
   def choose_order(params)
