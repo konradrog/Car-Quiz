@@ -1,11 +1,15 @@
 <h1> Best players </h1>
 <table style="color: white;">
   <tr>
+    <th> Place </th>
     <th> Name </th>
     <th> Score </th>
   </tr>
   <% @users.each_with_index do |user, i|  %>
     <tr>
+      <td>
+        <%= i+1 %>
+      </td>
       <td>
         <%= user.email[0..5] %>...
       </td>
