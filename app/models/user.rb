@@ -7,14 +7,14 @@ class User < ApplicationRecord
 
 
   def self.best_scores
-    User.joins(:games).group("users.id").sum(:score).sort
+    User.joins(:games).where.not(admin: true).group("users.id").sum(:score).to_a
   end
 
   def self.best_players
-    best_users = User.best_scores
+    best_users = User.best_scores.sort { |a, b| b[1] <=> a[1] }
     users = []
     best_users.each do |k|
-      users << User.find(k[0].to_i)
+      users << User.find(k[0])
     end
     users
   end
